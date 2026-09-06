@@ -386,12 +386,12 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* 3 Stat Callouts */}
+            {/* 4 Stat Callouts */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: '2rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '1.5rem',
                 textAlign: 'center',
               }}
             >
@@ -399,7 +399,7 @@ export default function LandingPage() {
               <div style={{ padding: '1rem', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
                 <div
                   style={{
-                    fontSize: '3rem',
+                    fontSize: '2.8rem',
                     fontFamily: 'var(--font-display)',
                     fontWeight: 800,
                     color: '#F5D061',
@@ -410,32 +410,55 @@ export default function LandingPage() {
                 >
                   {statCounts.standards}+
                 </div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
                   Indian Standards Indexed
                 </div>
-                <div style={{ fontSize: '0.82rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
                   Electrical, LED, Toys, Steel, Water &amp; Batteries
                 </div>
               </div>
 
               {/* Stat 2 */}
               <div style={{ padding: '1rem', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-                <div style={{ fontSize: '3rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: '#C9943A', lineHeight: 1 }}>
+                <div style={{ fontSize: '2.8rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: '#C9943A', lineHeight: 1 }}>
                   Zero
                 </div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
                   Hallucination RAG Search
                 </div>
-                <div style={{ fontSize: '0.82rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
                   Strict vector cosine similarity grounding
                 </div>
               </div>
 
               {/* Stat 3 */}
+              <div style={{ padding: '1rem', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+                <div
+                  style={{
+                    fontSize: '2.8rem',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 800,
+                    color: '#10B981',
+                    lineHeight: 1,
+                    transform: statsCompleted ? 'scale(1.05)' : 'scale(1)',
+                    transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                  }}
+                >
+                  94.4%
+                </div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
+                  Verified Accuracy
+                </div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
+                  Benchmark against 18 curated queries
+                </div>
+              </div>
+
+              {/* Stat 4 */}
               <div style={{ padding: '1rem' }}>
                 <div
                   style={{
-                    fontSize: '3rem',
+                    fontSize: '2.8rem',
                     fontFamily: 'var(--font-display)',
                     fontWeight: 800,
                     color: '#C1440E',
@@ -446,10 +469,10 @@ export default function LandingPage() {
                 >
                   &lt;{statCounts.latency}ms
                 </div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
                   Retrieval Latency
                 </div>
-                <div style={{ fontSize: '0.82rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
                   Supabase + pgvector database index
                 </div>
               </div>
