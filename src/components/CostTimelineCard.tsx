@@ -133,9 +133,26 @@ export default function CostTimelineCard({ standardCode, estimateOverride }: Cos
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.73rem', color: '#64748B' }}>
-        <AlertCircle size={12} color="#A8732A" style={{ flexShrink: 0 }} />
-        <span>{est.disclaimer}</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', paddingTop: '0.2rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.73rem', color: '#64748B' }}>
+          <AlertCircle size={12} color="#A8732A" style={{ flexShrink: 0 }} />
+          <span>{est.disclaimer}</span>
+        </div>
+        <a
+          href="/labs"
+          style={{
+            fontSize: '0.75rem',
+            fontFamily: 'var(--font-mono)',
+            fontWeight: 700,
+            color: '#1B2A4A',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.25rem',
+          }}
+        >
+          Find a testing lab near you →
+        </a>
       </div>
     </div>
   );

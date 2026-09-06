@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { ShieldCheck, MessageSquare, BookOpen, Info, User, LogOut, LogIn } from 'lucide-react';
+import { ShieldCheck, MessageSquare, BookOpen, Info, User, LogOut, LogIn, FlaskConical } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -79,6 +79,15 @@ export default function Navbar() {
           >
             <BookOpen size={15} strokeWidth={2} />
             <span>Browse Standards</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/labs"
+            className={`nav-link ${pathname === '/labs' ? 'active' : ''}`}
+          >
+            <FlaskConical size={15} strokeWidth={2} />
+            <span>Testing Labs</span>
           </Link>
         </li>
         <li>
