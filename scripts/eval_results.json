@@ -1,0 +1,206 @@
+{
+  "passed": 20,
+  "total": 20,
+  "accuracy": "100%",
+  "accuracyPct": 100,
+  "timestamp": "2026-09-06T19:42:02.320Z",
+  "tests": [
+    {
+      "id": 1,
+      "query": "I manufacture LED bulbs for home lighting in India",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 16102",
+      "returnedStandards": [
+        "IS 16102 (Part 1 & 2)",
+        "IS 16103",
+        "IS 15885",
+        "IS 10322:2026 (series)"
+      ]
+    },
+    {
+      "id": 2,
+      "query": "I am launching an electric kettle for kitchen use",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 302-2-201",
+      "returnedStandards": [
+        "IS 302-2-201",
+        "IS 302 (series)"
+      ]
+    },
+    {
+      "id": 3,
+      "query": "I manufacture induction cooktops",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 16242",
+      "returnedStandards": [
+        "IS 16242"
+      ]
+    },
+    {
+      "id": 4,
+      "query": "I make plastic toys for children sold in India",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 9873",
+      "returnedStandards": [
+        "IS 9873 / QCO for Toys"
+      ]
+    },
+    {
+      "id": 5,
+      "query": "I produce packaged mineral drinking water",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 14543",
+      "returnedStandards": [
+        "IS 14543"
+      ]
+    },
+    {
+      "id": 6,
+      "query": "I manufacture portable fire extinguishers",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 15683",
+      "returnedStandards": [
+        "IS 15683:2018",
+        "IS 16018:2012"
+      ]
+    },
+    {
+      "id": 7,
+      "query": "I sell lithium-ion power banks imported from China",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 16046",
+      "returnedStandards": [
+        "IS 13252 / IS 16046"
+      ]
+    },
+    {
+      "id": 8,
+      "query": "I make motorcycle safety helmets",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 4151",
+      "returnedStandards": [
+        "IS 4151"
+      ]
+    },
+    {
+      "id": 9,
+      "query": "I manufacture ordinary portland cement",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 269",
+      "returnedStandards": [
+        "IS 269 / IS 12330 / IS 12600"
+      ]
+    },
+    {
+      "id": 10,
+      "query": "I supply high strength TMT steel bars",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 1786",
+      "returnedStandards": [
+        "IS 1786"
+      ]
+    },
+    {
+      "id": 11,
+      "query": "I manufacture burnt clay building bricks",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 1077",
+      "returnedStandards": [
+        "IS 1077"
+      ]
+    },
+    {
+      "id": 12,
+      "query": "I manufacture LED luminaires street lights",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 10322",
+      "returnedStandards": [
+        "IS 10322:2026 (series)"
+      ]
+    },
+    {
+      "id": 13,
+      "query": "I make electrical plugs and socket outlets",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 1293",
+      "returnedStandards": [
+        "IS 1293"
+      ]
+    },
+    {
+      "id": 14,
+      "query": "I manufacture LED drivers",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS 15885",
+      "returnedStandards": [
+        "IS 15885"
+      ]
+    },
+    {
+      "id": 15,
+      "query": "I sell video game consoles",
+      "category": "single_match",
+      "passed": true,
+      "reason": "Matched IS/IEC 62368-1",
+      "returnedStandards": [
+        "IS/IEC 62368-1:2023"
+      ]
+    },
+    {
+      "id": 16,
+      "query": "I have an air conditioner remote control",
+      "category": "filtered_ambiguous",
+      "passed": true,
+      "reason": "Only IS 1391 returned (noise filtered)",
+      "returnedStandards": [
+        "IS 1391 / Room AC Standards"
+      ]
+    },
+    {
+      "id": 17,
+      "query": "I sell packaged orange juice",
+      "category": "out_of_scope",
+      "passed": true,
+      "reason": "Zero BIS standards matched (FSSAI fallback)",
+      "returnedStandards": []
+    },
+    {
+      "id": 18,
+      "query": "I sell medical diagnostic ultrasound machines",
+      "category": "out_of_scope",
+      "passed": true,
+      "reason": "Zero BIS standards matched (CDSCO fallback)",
+      "returnedStandards": []
+    },
+    {
+      "id": 19,
+      "query": "I manufacture prescription cardiovascular medicines",
+      "category": "out_of_scope",
+      "passed": true,
+      "reason": "Zero BIS standards matched (Pharma fallback)",
+      "returnedStandards": []
+    },
+    {
+      "id": 20,
+      "query": "quantum space widget xyz999",
+      "category": "out_of_scope",
+      "passed": true,
+      "reason": "Zero BIS standards matched (General fallback)",
+      "returnedStandards": []
+    }
+  ]
+}

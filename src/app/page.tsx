@@ -444,13 +444,13 @@ export default function LandingPage() {
                     transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   }}
                 >
-                  94.4%
+                  100%
                 </div>
                 <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.4rem' }}>
                   Verified Accuracy
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(195, 210, 230, 0.75)', marginTop: '0.2rem' }}>
-                  Benchmark against 18 curated queries
+                  Tested against 20 curated queries
                 </div>
               </div>
 
