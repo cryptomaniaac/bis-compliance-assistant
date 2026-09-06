@@ -27,6 +27,18 @@ export interface RetrievalResult {
   schemes: RetrievedScheme[];
 }
 
+const STOP_WORDS = new Set([
+  'have', 'an', 'a', 'the', 'is', 'are', 'for', 'in', 'of', 'and', 'or', 'to', 'with', 'on', 'at', 'by', 'from',
+  'my', 'i', 'we', 'you', 'sell', 'making', 'make', 'manufacture', 'import', 'supplier', 'supply', 'producing', 'produce',
+  'check', 'details', 'compliance', 'standard', 'rules', 'requirement', 'requirements', 'need', 'needs', 'product'
+]);
+
+const GENERIC_MODIFIERS = new Set([
+  'packaged', 'portable', 'electric', 'electrical', 'electronic', 'digital', 'automatic', 'manual', 'home', 'household',
+  'commercial', 'industrial', 'small', 'large', 'heavy', 'light', 'general', 'type', 'series', 'part', 'safety',
+  'spec', 'specification', 'control', 'device', 'unit', 'system', 'equipment', 'apparatus'
+]);
+
 export async function retrieveRelevantContext(userQuery: string): Promise<RetrievalResult> {
   // 1. Attempt vector retrieval if Supabase and Gemini are configured
   if (isSupabaseConfigured && supabaseAdmin) {
@@ -48,10 +60,20 @@ export async function retrieveRelevantContext(userQuery: string): Promise<Retrie
         ]);
 
         if (!standardsRes.error && standardsRes.data && standardsRes.data.length > 0) {
-          return {
-            standards: standardsRes.data,
-            schemes: schemesRes.data || []
-          };
+          const rawData: RetrievedStandard[] = standardsRes.data;
+          const maxSim = Math.max(...rawData.map(s => s.similarity || 0));
+
+          // Gating: Absolute similarity >= 0.50 AND relative ratio >= 0.60 of top match
+          const filteredVector = rawData.filter(s =>
+            (s.similarity || 0) >= 0.50 && (s.similarity || 0) >= maxSim * 0.60
+          );
+
+          if (filteredVector.length > 0) {
+            return {
+              standards: filteredVector,
+              schemes: schemesRes.data || []
+            };
+          }
         }
       } catch (err) {
         console.warn('Vector match query failed, using fallback retriever:', err);
@@ -60,33 +82,67 @@ export async function retrieveRelevantContext(userQuery: string): Promise<Retrie
   }
 
   // 2. High-precision keyword/semantic scoring fallback over seed dataset
-  const terms = userQuery.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+  const terms = userQuery
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')
+    .split(/\s+/)
+    .filter(t => t.length > 2 && !STOP_WORDS.has(t));
+
+  if (terms.length === 0) {
+    return { standards: [], schemes: seedData.schemes.slice(0, 2) };
+  }
+
+  const coreTerms = terms.filter(t => !GENERIC_MODIFIERS.has(t));
+  const hasCoreTerms = coreTerms.length > 0;
 
   const scoredStandards = seedData.standards.map(st => {
-    const textToMatch = `${st.standard_code} ${st.title} ${st.product_category} ${st.description} ${st.certification_type} ${st.testing_requirements}`.toLowerCase();
+    const codeClean = st.standard_code.toLowerCase();
+    const catClean = st.product_category.toLowerCase();
+    const titleClean = st.title.toLowerCase();
+    const descClean = st.description.toLowerCase();
+
     let score = 0;
 
     for (const term of terms) {
-      if (st.product_category.toLowerCase().includes(term)) score += 4;
-      if (st.title.toLowerCase().includes(term)) score += 3;
-      if (st.standard_code.toLowerCase().includes(term)) score += 5;
-      if (textToMatch.includes(term)) score += 1;
+      const isModifier = GENERIC_MODIFIERS.has(term);
+      const categoryWeight = isModifier && hasCoreTerms ? 2 : 8;
+      const titleWeight = isModifier && hasCoreTerms ? 2 : 6;
+      const codeWeight = isModifier && hasCoreTerms ? 3 : 10;
+
+      if (catClean.includes(term)) score += categoryWeight;
+      if (titleClean.includes(term)) score += titleWeight;
+      if (codeClean.includes(term)) score += codeWeight;
+      if (descClean.includes(term)) score += 1;
     }
 
-    return { ...st, score };
+    return { ...st, score, similarity: Math.min(0.99, score / 25) };
   });
 
-  // Filter standards with score > 0 or return top matches if matches exist
-  const matchedStandards = scoredStandards
-    .filter(s => s.score > 0)
-    .sort((a, b) => b.score - a.score)
+  const sorted = scoredStandards.filter(s => s.score > 0).sort((a, b) => b.score - a.score);
+
+  if (sorted.length === 0) {
+    return { standards: [], schemes: seedData.schemes.slice(0, 2) };
+  }
+
+  const topScore = sorted[0].score;
+
+  // Empirical Confidence Thresholds:
+  // 1. Absolute minimum score bar = 10 (must match a primary product category/title term)
+  // 2. Relative ratio bar = 0.60 of topScore
+  const MIN_ABSOLUTE_SCORE = 10;
+  const MIN_RELATIVE_RATIO = 0.60;
+
+  if (topScore < MIN_ABSOLUTE_SCORE) {
+    return { standards: [], schemes: seedData.schemes.slice(0, 2) };
+  }
+
+  const matchedStandards = sorted
+    .filter(s => s.score >= MIN_ABSOLUTE_SCORE && s.score >= topScore * MIN_RELATIVE_RATIO)
     .slice(0, 4)
     .map(({ score, ...rest }) => rest);
 
-  const matchedSchemes = seedData.schemes.slice(0, 2);
-
   return {
     standards: matchedStandards,
-    schemes: matchedSchemes
+    schemes: seedData.schemes.slice(0, 2)
   };
 }
