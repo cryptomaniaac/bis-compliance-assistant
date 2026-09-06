@@ -1,0 +1,352 @@
+{
+  "standards": [
+    {
+      "standard_code": "IS 302-2-201",
+      "title": "Household and Similar Electrical Appliances — Safety, Part 2-201: Electric Kettles",
+      "product_category": "Electric Kettles",
+      "description": "Safety requirements for electric kettles and similar water-heating household appliances.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 16242",
+      "title": "Induction Cookers — Safety Requirements",
+      "product_category": "Induction Cookers",
+      "description": "Safety and performance requirements for household induction cooking appliances.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 302 (series)",
+      "title": "Safety of Household and Similar Electrical Appliances",
+      "product_category": "General Household Electrical Appliances",
+      "description": "Umbrella safety standard series covering a wide range of household electrical appliances; specific product types fall under numbered sub-parts.",
+      "certification_type": "ISI Mark (Scheme I) — QCO 2026 route, deadline 1 Oct 2026",
+      "testing_requirements": "Electrical safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 616",
+      "title": "Audio, Video and Similar Electronic Apparatus — Safety Requirements",
+      "product_category": "Audio/Video Equipment",
+      "description": "Safety requirements for audio, video, and similar electronic equipment.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 1293",
+      "title": "Plugs and Socket-Outlets of Rated Voltage up to 250V",
+      "product_category": "Plugs & Socket Outlets",
+      "description": "Safety and dimensional requirements for household electrical plugs and sockets.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 16102 (Part 1 & 2)",
+      "title": "Self-Ballasted LED Lamps — Safety and Performance Requirements",
+      "product_category": "LED Bulbs",
+      "description": "Safety and performance requirements for self-ballasted LED lamps (bulbs) for general lighting.",
+      "certification_type": "CRS — Compulsory Registration Scheme (Scheme II)",
+      "testing_requirements": "Lab testing at BIS-recognized lab, self-declaration, no factory inspection. Timeline ~4-6 weeks.",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 16103",
+      "title": "LED Modules for General Lighting — Safety Requirements",
+      "product_category": "LED Modules",
+      "description": "Safety requirements for LED light modules used in general lighting fixtures.",
+      "certification_type": "CRS — Compulsory Registration Scheme (Scheme II)",
+      "testing_requirements": "Lab testing at BIS-recognized lab, self-declaration, no factory inspection",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 15885",
+      "title": "LED Drivers — Safety Requirements",
+      "product_category": "LED Drivers",
+      "description": "Safety requirements for DC or AC supplied electronic control gear (drivers) for LED modules.",
+      "certification_type": "CRS — Compulsory Registration Scheme (Scheme II)",
+      "testing_requirements": "Lab testing at BIS-recognized lab, self-declaration, no factory inspection",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 10322:2026 (series)",
+      "title": "LED Luminaires (Panel, Street, Flood, Downlight, Batten, Emergency)",
+      "product_category": "LED Luminaires / Fixtures",
+      "description": "Revised 2026 series covering safety and performance of various LED luminaire types. Mandatory since 2 Aug 2026.",
+      "certification_type": "CRS — Compulsory Registration Scheme (Scheme II)",
+      "testing_requirements": "Lab testing at BIS-recognized lab, self-declaration, no factory inspection",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS/IEC 62368-1:2023",
+      "title": "Audio/Video, Information and Communication Technology Equipment — Safety Requirements, Part 1",
+      "product_category": "IT Equipment, Video Game Consoles, ICT Devices",
+      "description": "Comprehensive safety standard for electronic equipment in the audio/video/ICT category, including video game electronics.",
+      "certification_type": "CRS — Compulsory Registration Scheme (Scheme II)",
+      "testing_requirements": "Lab testing at BIS-recognized lab, self-declaration, no factory inspection",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 4151",
+      "title": "Protective Helmets for Two-Wheeler Riders — Specification",
+      "product_category": "Motorcycle/Two-Wheeler Helmets",
+      "description": "Safety specification for protective helmets used by two-wheeler riders in India.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Impact testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 9873 / QCO for Toys",
+      "title": "Quality Control Order for Toys — Mechanical, Physical & Safety Specification",
+      "product_category": "Toys (all types, domestic & imported)",
+      "description": "Mandatory ISI marking requirement for all toys sold in India, effective Sept 2020 (domestic) / Jan 2021 (imports).",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Safety testing (mechanical, chemical, flammability as applicable), factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 269 / IS 12330 / IS 12600",
+      "title": "Portland Cement — Various Grades (Ordinary, Sulphate Resisting, Low Heat)",
+      "product_category": "Cement",
+      "description": "Specifications for different grades of Portland cement manufactured and sold in India.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Material testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 1786",
+      "title": "High Strength Deformed Steel Bars (TMT Bars) — Specification",
+      "product_category": "Steel / TMT Bars",
+      "description": "Specification for high strength deformed and hard-drawn steel bars and wires for concrete reinforcement (Fe 415, Fe 500, Fe 550 grades).",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Material/mechanical testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 8508:2000",
+      "title": "Electric Pressure Cookers — Safety Requirements",
+      "product_category": "Electric Pressure Cookers",
+      "description": "Safety requirements for electric pressure cookers sold in India.",
+      "certification_type": "ISI Mark (Scheme I) — QCO 2026 route",
+      "testing_requirements": "Electrical and pressure safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 2347",
+      "title": "Pressure Cookers (Non-Electric) — Specification",
+      "product_category": "Stovetop/Manual Pressure Cookers",
+      "description": "Safety and construction requirements for manual (non-electric) pressure cookers, covering safe pressure release mechanisms and material durability.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Pressure safety and material testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 15683:2018",
+      "title": "Portable Fire Extinguishers — Performance and Construction Specification",
+      "product_category": "Portable Fire Extinguishers",
+      "description": "Performance and construction specification for portable fire extinguishers, covering pressure, discharge, and fire-rating tests.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Pressure, discharge, and fire rating tests at BIS-recognized lab, plus factory audit",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 16018:2012",
+      "title": "Mobile/Wheeled Fire Extinguishers — Specification",
+      "product_category": "Mobile/Wheeled Fire Extinguishers (higher capacity)",
+      "description": "Specification for higher-capacity mobile and wheeled fire extinguisher units.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Pressure, discharge, and fire rating tests at BIS-recognized lab, plus factory audit",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 14543",
+      "title": "Packaged Drinking Water (Mineral Water) — Specification",
+      "product_category": "Packaged/Mineral Drinking Water, Water Bottle",
+      "description": "Safety and quality specification for packaged drinking water, including microbiological, chemical, and physical parameter requirements. Subject to frequent surprise inspections due to public health impact.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Microbiological, chemical, and physical testing; factory inspection required; higher testing costs typical",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 15410 / IS 17803",
+      "title": "Containers for Packaging of Packaged Drinking Water and Plastic Water Bottles",
+      "product_category": "Plastic Water Bottle, Reusable Water Bottle, PET Water Bottle, Plastic Container",
+      "description": "Safety and food-contact material specifications for plastic water bottles, PET bottles, and plastic containers used for drinking water and beverages in India under the BIS Quality Control Order (QCO).",
+      "certification_type": "ISI Mark (Scheme I) — Mandatory QCO",
+      "testing_requirements": "Overall migration testing, heavy metal migration, bursting strength, food-grade polymer safety testing at BIS-recognized lab, and physical factory inspection.",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 694",
+      "title": "PVC Insulated Cables and Wires — Specification",
+      "product_category": "Electrical Cables & Wires",
+      "description": "Safety specification for PVC-insulated electrical cables and wires used in wiring installations, to prevent electrical accidents.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical insulation and safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 1077",
+      "title": "Common Burnt Clay Building Bricks — Specification",
+      "product_category": "Construction Bricks",
+      "description": "Specification for common burnt clay bricks used in building construction.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Material/strength testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 15500:2004",
+      "title": "Point-of-Use UV and RO Water Purifiers — Safety & Performance Requirements",
+      "product_category": "Water Purifiers (UV/RO)",
+      "description": "Requirements ensuring UV and RO water purifiers effectively remove impurities and supply safe drinking water.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Water quality/filtration performance testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 15298 / Footwear Standards",
+      "title": "Rubber and Leather Footwear — Specification",
+      "product_category": "Footwear",
+      "description": "Safety and material quality requirements for rubber and leather footwear sold in India.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Material and durability testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 302-2-3 / Electric Iron Standards",
+      "title": "Electric Irons — Safety Requirements",
+      "product_category": "Electric Irons",
+      "description": "Safety requirements for household electric clothes irons.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical and thermal safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 302-2-30 / Room Heater Standards",
+      "title": "Room Heaters — Safety Requirements",
+      "product_category": "Room Heaters",
+      "description": "Safety requirements for household electric room heaters.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical and thermal safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 1391 / Room AC Standards",
+      "title": "Room Air Conditioners — Safety Requirements",
+      "product_category": "Room Air Conditioners",
+      "description": "Safety requirements for household room air conditioning units.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Electrical safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 4985",
+      "title": "UPVC Pipes — Specification for Potable Water Supplies",
+      "product_category": "UPVC Pipes (plumbing/construction)",
+      "description": "Material and construction specification for UPVC pipes used in plumbing and construction.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Material and pressure testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 3196 / LPG Standards",
+      "title": "LPG Cylinders and Regulators — Safety Specification",
+      "product_category": "LPG Cylinders & Regulators",
+      "description": "Safety specification for LPG gas cylinders and pressure regulators due to high safety risk.",
+      "certification_type": "ISI Mark (Scheme I)",
+      "testing_requirements": "Pressure and safety testing, factory inspection required",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 13252 / IS 16046",
+      "title": "Lithium-Ion Batteries, Power Banks & IT Power Adapters",
+      "product_category": "Mobile Chargers & Li-Ion Batteries",
+      "description": "Mandatory CRS registration for Lithium-Ion cells, power banks, and IT power supply units.",
+      "certification_type": "CRS — Compulsory Registration Scheme (Scheme II)",
+      "testing_requirements": "Lab testing at BIS-recognized lab, self-declaration, no factory inspection",
+      "source_url": "https://www.crsbis.in"
+    },
+    {
+      "standard_code": "IS 17263 / Textile QCO",
+      "title": "Textiles — Cotton, Synthetic & Blended Garments, T-Shirts & Apparel",
+      "product_category": "Textiles, Garments & Apparel (T-shirts, Shirts, Clothing)",
+      "description": "Mandatory Quality Control Order for textile goods, cotton garments, t-shirts, protective apparel, and fabric eco-labeling standards under the Ministry of Textiles.",
+      "certification_type": "ISI Mark (Scheme I) / Eco-Mark Certification",
+      "testing_requirements": "Color fastness, fiber content analysis, fabric strength, formaldehyde & eco-parameter NABL lab testing",
+      "source_url": "https://www.bis.gov.in"
+    },
+    {
+      "standard_code": "IS 17550 / IS 1476",
+      "title": "Household Refrigerating Appliances — Frost-Free and Direct Cool Refrigerators (Safety & Performance)",
+      "product_category": "Refrigerators & Freezers (Household Refrigerating Appliances)",
+      "description": "Mandatory safety, electrical insulation, refrigerant leakage, and energy performance requirements for household refrigerators under BIS Quality Control Orders & BEE Star Labeling rules.",
+      "certification_type": "ISI Mark (Scheme I) + BEE Star Rating Labeling",
+      "testing_requirements": "High-voltage insulation withstand, cooling performance, refrigerant pressure leakage, energy consumption NABL testing, and factory audit",
+      "source_url": "https://www.bis.gov.in"
+    }
+  ],
+  "schemes": [
+    {
+      "scheme_name": "ISI Mark Certification (Scheme I)",
+      "description": "The traditional, most rigorous BIS certification route. Involves product testing at a BIS-recognized lab AND a physical factory inspection by a BIS officer before a license is granted. Applies to household appliances, cement, steel, toys, helmets, and most non-electronic notified products under Quality Control Orders (QCOs).",
+      "application_steps": [
+        "Identify the applicable Indian Standard (IS number) for your product",
+        "Get your product tested at a BIS-recognized laboratory",
+        "Apply through the BIS Manak Online Portal (manakonline.bis.gov.in)",
+        "Undergo a factory inspection by a BIS officer",
+        "Submit required documents (business registration, test reports, quality control documentation)",
+        "Pay applicable license fees",
+        "Receive your CM/L license number and apply the ISI mark to your product"
+      ],
+      "required_documents": [
+        "Business Registration / UDYAM MSME Certificate",
+        "Manufacturing plant layout & machinery list",
+        "In-house testing facility equipment calibration certificates",
+        "NABL Lab Test Report of sample",
+        "Trademark Registration / Brand Authorization Letter"
+      ],
+      "fee_info": "Varies by product category and company size; MSME concessions available. Check current fee schedule on BIS Manak Online Portal.",
+      "timeline": "Approximately 3 months (includes factory inspection cycle)"
+    },
+    {
+      "scheme_name": "Compulsory Registration Scheme — CRS (Scheme II)",
+      "description": "Streamlined registration route specifically for electronics and IT products, administered by BIS under MeitY's Electronics and Information Technology Goods Order, 2021. Operates on lab testing + self-declaration — NO factory inspection required, since electronics move too fast for factory-inspection cycles.",
+      "application_steps": [
+        "Confirm your product is on the MeitY CRS-notified list (70+ categories: laptops, phones, LED products, power banks, chargers, smartwatches, etc.)",
+        "Get your product tested at a BIS-recognized laboratory for the applicable IS standard",
+        "Submit test report and required information to BIS for registration",
+        "Receive your BIS Registration Number (R-Number)",
+        "Apply the Standard Mark with R-Number to your product and packaging before sale"
+      ],
+      "required_documents": [
+        "BIS recognized NABL Lab Test Report (within 90 days)",
+        "Brand Registration Certificate / Consent Letter",
+        "Authorized Indian Representative (AIR) for foreign manufacturers",
+        "Undertaking for Compliance with BIS CRS Regulations"
+      ],
+      "fee_info": "Registration fee applies per product model, per manufacturer/brand — note: registration is NOT transferable, brand owners need their own registration even if using an OEM manufacturer",
+      "timeline": "Approximately 20-45 working days"
+    },
+    {
+      "scheme_name": "Scheme X",
+      "description": "Applies to specific products notified under omnibus technical regulation orders, such as certain machinery and industrial equipment (e.g. packing machinery, weaving machinery, gear). Requires product testing and conformity assessment as prescribed by BIS.",
+      "application_steps": [
+        "Confirm your product falls under a Scheme X notification",
+        "Get product tested and assessed per applicable conformity requirements",
+        "Apply through BIS with required documentation",
+        "Receive certification upon successful assessment"
+      ],
+      "required_documents": [
+        "Product technical specifications & drawings",
+        "Conformity assessment lab test reports",
+        "Manufacturer quality management system certification"
+      ],
+      "fee_info": "Varies by product category",
+      "timeline": "Varies; check current BIS notifications for deadlines (some categories extended to Sept 2026)"
+    }
+  ]
+}
