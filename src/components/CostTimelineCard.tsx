@@ -1,6 +1,6 @@
 'use client';
 
-import { Clock, Coins, FileText, AlertCircle } from 'lucide-react';
+import { Clock, Coins, FileText, AlertCircle, Bookmark } from 'lucide-react';
 import { getEstimatesForStandard, StandardEstimate } from '@/lib/estimates';
 
 interface CostTimelineCardProps {
@@ -51,7 +51,7 @@ export default function CostTimelineCard({ standardCode, estimateOverride }: Cos
               letterSpacing: '0.08em',
             }}
           >
-            ESTIMATED COST & TIMELINE SUMMARY
+            ESTIMATED COST &amp; TIMELINE SUMMARY
           </span>
         </div>
 
@@ -60,14 +60,14 @@ export default function CostTimelineCard({ standardCode, estimateOverride }: Cos
             fontSize: '0.65rem',
             fontFamily: 'var(--font-mono)',
             fontWeight: 600,
-            color: '#64748B',
-            background: '#FFFFFF',
+            color: est.hasVerifiedData ? '#10B981' : '#64748B',
+            background: est.hasVerifiedData ? 'rgba(16,185,129,0.12)' : '#FFFFFF',
             padding: '0.15rem 0.5rem',
             borderRadius: '10px',
-            border: '1px solid #E2DCD0',
+            border: est.hasVerifiedData ? '1px solid rgba(16,185,129,0.3)' : '1px solid #E2DCD0',
           }}
         >
-          APPROXIMATE ESTIMATE
+          {est.hasVerifiedData ? 'VERIFIED BIS FIGURES' : 'APPROXIMATE ESTIMATE'}
         </span>
       </div>
 
@@ -91,7 +91,7 @@ export default function CostTimelineCard({ standardCode, estimateOverride }: Cos
             <Clock size={13} color="#1B2A4A" />
             <span>Process Duration</span>
           </div>
-          <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#1B2A4A', marginTop: '0.25rem' }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#1B2A4A', marginTop: '0.25rem', lineHeight: '1.3' }}>
             {est.duration}
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function CostTimelineCard({ standardCode, estimateOverride }: Cos
             <Coins size={13} color="#D04A0C" />
             <span>Lab Testing Cost</span>
           </div>
-          <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#D04A0C', marginTop: '0.25rem' }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#D04A0C', marginTop: '0.25rem', lineHeight: '1.3' }}>
             {est.testingCost}
           </div>
         </div>
@@ -127,13 +127,19 @@ export default function CostTimelineCard({ standardCode, estimateOverride }: Cos
             <FileText size={13} color="#10B981" />
             <span>BIS Official Fees</span>
           </div>
-          <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#10B981', marginTop: '0.25rem' }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#10B981', marginTop: '0.25rem', lineHeight: '1.3' }}>
             {est.applicationFee}
           </div>
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', paddingTop: '0.2rem' }}>
+      {/* Citation Footnote */}
+      <div style={{ fontSize: '0.72rem', color: '#64748B', display: 'flex', alignItems: 'center', gap: '0.35rem', background: '#FFFFFF', padding: '0.35rem 0.6rem', borderRadius: '6px', border: '1px solid #EDE7DC' }}>
+        <Bookmark size={12} color="#C9943A" />
+        <span style={{ fontWeight: 600 }}>{est.sourceNote}</span>
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', paddingTop: '0.1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.73rem', color: '#64748B' }}>
           <AlertCircle size={12} color="#A8732A" style={{ flexShrink: 0 }} />
           <span>{est.disclaimer}</span>

@@ -1,5 +1,6 @@
 import { jsPDF } from 'jspdf';
 import { StructuredBISResponse } from './llm';
+import { getEstimatesForStandard } from './estimates';
 
 export function exportComplianceReportPdf(data: StructuredBISResponse, titleOverride?: string) {
   const doc = new jsPDF({
@@ -164,6 +165,39 @@ export function exportComplianceReportPdf(data: StructuredBISResponse, titleOver
       y += boxHeight + 4;
     }
     y += 2;
+  }
+
+  // 3.5 Estimated Cost & Timeline Summary
+  if (data.found_in_context && data.responseType !== 'non_bis_regulated' && (data.applicable_standards && data.applicable_standards.length > 0)) {
+    const stdCode = data.applicable_standards[0]?.code || data.identified_product;
+    const est = getEstimatesForStandard(stdCode);
+
+    checkPageBreak(30);
+    doc.setFont('Helvetica', 'bold');
+    doc.setFontSize(10);
+    doc.setTextColor(27, 42, 74);
+    doc.text('ESTIMATED CERTIFICATION COST & TIMELINE', margin, y);
+    y += 6;
+
+    doc.setFillColor(250, 251, 253);
+    doc.setDrawColor(201, 148, 58);
+    doc.roundedRect(margin, y, contentWidth, 22, 2, 2, 'FD');
+
+    doc.setFont('Helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(27, 42, 74);
+    doc.text(`Duration: ${est.duration}`, margin + 4, y + 6);
+    doc.setTextColor(208, 74, 12);
+    doc.text(`Lab Testing: ${est.testingCost}`, margin + 4, y + 11);
+    doc.setTextColor(16, 185, 129);
+    doc.text(`BIS Fees: ${est.applicationFee}`, margin + 4, y + 16);
+
+    doc.setFont('Helvetica', 'italic');
+    doc.setFontSize(7.5);
+    doc.setTextColor(100, 116, 139);
+    doc.text(`${est.sourceNote} | ${est.disclaimer}`, margin + 4, y + 20);
+
+    y += 26;
   }
 
   // 4. Testing Requirements / Label Checklist / Action Roadmap

@@ -294,8 +294,10 @@ export default function ResultCard({ data }: ResultCardProps) {
           </div>
         )}
 
-        {/* Cost & Timeline Estimator Card */}
-        <CostTimelineCard standardCode={data.applicable_standards?.[0]?.code || data.identified_product || data.certification_required} />
+        {/* Cost & Timeline Estimator Card — Only for confident BIS matches */}
+        {data.found_in_context && data.responseType !== 'non_bis_regulated' && (data.applicable_standards && data.applicable_standards.length > 0) && (
+          <CostTimelineCard standardCode={data.applicable_standards[0].code || data.identified_product} />
+        )}
 
         {/* Testing Requirements */}
         {data.testing_requirements && data.testing_requirements.length > 0 && (
