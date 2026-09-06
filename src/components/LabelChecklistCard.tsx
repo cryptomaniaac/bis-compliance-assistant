@@ -2,6 +2,7 @@
 
 import { ShieldCheck, CheckCircle2, XCircle, AlertTriangle, ExternalLink, Tag, Info } from 'lucide-react';
 import { StructuredBISResponse } from '@/lib/llm';
+import DownloadPdfButton from './DownloadPdfButton';
 
 interface LabelChecklistCardProps {
   data: StructuredBISResponse;
@@ -260,6 +261,25 @@ export default function LabelChecklistCard({ data }: LabelChecklistCardProps) {
             ))}
           </div>
         )}
+
+        {/* Export PDF Action Bar */}
+        <div style={{
+          borderTop: '1px solid var(--cream-400, #E2DCD0)',
+          paddingTop: '1.25rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '1rem',
+          flexWrap: 'wrap',
+          background: 'var(--cream-100, #FAF8F5)',
+          margin: '0.5rem -1.75rem -1.5rem',
+          padding: '1rem 1.75rem',
+        }}>
+          <div style={{ fontSize: '0.8rem', color: '#64748B' }}>
+            📄 Need a formal audit document? Download as formatted PDF.
+          </div>
+          <DownloadPdfButton data={data} label="Download Audit Report (PDF)" variant="primary" />
+        </div>
       </div>
 
       <style>{`
