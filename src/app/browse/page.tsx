@@ -6,6 +6,7 @@ import { Search, BookOpen, ShieldCheck, ExternalLink, ChevronRight, AlertCircle,
 import DepthBackground from '@/components/DepthBackground';
 import Reveal from '@/components/Reveal';
 import SmoothScroll from '@/components/SmoothScroll';
+import CostTimelineCard from '@/components/CostTimelineCard';
 
 interface StandardItem {
   id?: string;
@@ -426,6 +427,9 @@ export default function BrowsePage() {
                   {selectedStandard.testing_requirements}
                 </div>
               </div>
+
+              {/* Cost & Timeline Estimator Card */}
+              <CostTimelineCard standardCode={selectedStandard.standard_code} />
             </div>
 
             <div style={{

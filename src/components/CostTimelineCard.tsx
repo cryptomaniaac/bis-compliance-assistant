@@ -1,0 +1,142 @@
+'use client';
+
+import { Clock, Coins, FileText, AlertCircle } from 'lucide-react';
+import { getEstimatesForStandard, StandardEstimate } from '@/lib/estimates';
+
+interface CostTimelineCardProps {
+  standardCode?: string;
+  estimateOverride?: StandardEstimate;
+}
+
+export default function CostTimelineCard({ standardCode, estimateOverride }: CostTimelineCardProps) {
+  const est = estimateOverride || getEstimatesForStandard(standardCode);
+
+  return (
+    <div
+      style={{
+        background: 'linear-gradient(135deg, #FAFBFD 0%, #F5F7FA 100%)',
+        border: '1px solid var(--cream-400, #E2DCD0)',
+        borderLeft: '4px solid #C9943A',
+        borderRadius: '12px',
+        padding: '1.1rem 1.25rem',
+        marginTop: '1rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.85rem',
+        boxShadow: '0 4px 16px rgba(10,17,40,0.04)',
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              width: '26px',
+              height: '26px',
+              borderRadius: '50%',
+              background: 'rgba(201,148,58,0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Coins size={14} color="#A8732A" />
+          </div>
+          <span
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              color: '#A8732A',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+            }}
+          >
+            ESTIMATED COST & TIMELINE SUMMARY
+          </span>
+        </div>
+
+        <span
+          style={{
+            fontSize: '0.65rem',
+            fontFamily: 'var(--font-mono)',
+            fontWeight: 600,
+            color: '#64748B',
+            background: '#FFFFFF',
+            padding: '0.15rem 0.5rem',
+            borderRadius: '10px',
+            border: '1px solid #E2DCD0',
+          }}
+        >
+          APPROXIMATE ESTIMATE
+        </span>
+      </div>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '0.75rem',
+        }}
+      >
+        {/* Timeline */}
+        <div
+          style={{
+            background: '#FFFFFF',
+            padding: '0.75rem 0.9rem',
+            borderRadius: '8px',
+            border: '1px solid rgba(27,42,74,0.08)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#1B2A4A', fontSize: '0.75rem', fontWeight: 700 }}>
+            <Clock size={13} color="#1B2A4A" />
+            <span>Process Duration</span>
+          </div>
+          <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#1B2A4A', marginTop: '0.25rem' }}>
+            {est.duration}
+          </div>
+        </div>
+
+        {/* Lab Testing Cost */}
+        <div
+          style={{
+            background: '#FFFFFF',
+            padding: '0.75rem 0.9rem',
+            borderRadius: '8px',
+            border: '1px solid rgba(27,42,74,0.08)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#D04A0C', fontSize: '0.75rem', fontWeight: 700 }}>
+            <Coins size={13} color="#D04A0C" />
+            <span>Lab Testing Cost</span>
+          </div>
+          <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#D04A0C', marginTop: '0.25rem' }}>
+            {est.testingCost}
+          </div>
+        </div>
+
+        {/* Application Fee */}
+        <div
+          style={{
+            background: '#FFFFFF',
+            padding: '0.75rem 0.9rem',
+            borderRadius: '8px',
+            border: '1px solid rgba(27,42,74,0.08)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#10B981', fontSize: '0.75rem', fontWeight: 700 }}>
+            <FileText size={13} color="#10B981" />
+            <span>BIS Official Fees</span>
+          </div>
+          <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#10B981', marginTop: '0.25rem' }}>
+            {est.applicationFee}
+          </div>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.73rem', color: '#64748B' }}>
+        <AlertCircle size={12} color="#A8732A" style={{ flexShrink: 0 }} />
+        <span>{est.disclaimer}</span>
+      </div>
+    </div>
+  );
+}

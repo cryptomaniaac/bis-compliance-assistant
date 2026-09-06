@@ -4,6 +4,7 @@ import { ShieldCheck, CheckCircle2, AlertCircle, ExternalLink, ChevronDown, Chev
 import { StructuredBISResponse } from '@/lib/llm';
 import { useState } from 'react';
 import DownloadPdfButton from './DownloadPdfButton';
+import CostTimelineCard from './CostTimelineCard';
 
 interface ResultCardProps {
   data: StructuredBISResponse;
@@ -292,6 +293,9 @@ export default function ResultCard({ data }: ResultCardProps) {
             </div>
           </div>
         )}
+
+        {/* Cost & Timeline Estimator Card */}
+        <CostTimelineCard standardCode={data.applicable_standards?.[0]?.code || data.identified_product || data.certification_required} />
 
         {/* Testing Requirements */}
         {data.testing_requirements && data.testing_requirements.length > 0 && (
