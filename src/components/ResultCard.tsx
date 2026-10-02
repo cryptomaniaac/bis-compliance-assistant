@@ -10,6 +10,24 @@ interface ResultCardProps {
   data: StructuredBISResponse;
 }
 
+function formatProductType(raw?: string): string {
+  if (!raw) return '';
+  let clean = raw.trim();
+
+  // Strip trailing full sentences or questions if raw query was echoed
+  clean = clean.split(/\.\s+|\?\s+/)[0];
+
+  // Strip common query prefix fillers (case-insensitive)
+  clean = clean.replace(/^(i\s+have\s+(a|an)?|have\s+(a|an)?|i\s+want\s+to\s+(certify|sell|manufacture|import)?|what\s+is\s+the\s+bis\s+standard\s+for|does\s+bis\s+apply\s+to|i\s+am\s+(making|selling|importing|manufacturing)\s+(a|an)?|we\s+make\s+(a|an)?|looking\s+for\s+(a|an)?)\s+/i, '');
+
+  // Strip trailing punctuation or cut-off fragments
+  clean = clean.replace(/[\.,\?!\s]+$/, '');
+
+  if (!clean) return raw;
+
+  return clean.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+}
+
 export default function ResultCard({ data }: ResultCardProps) {
   const [expandedStep, setExpandedStep] = useState<number | null>(null);
 
@@ -121,7 +139,7 @@ export default function ResultCard({ data }: ResultCardProps) {
                 fontSize: '1rem', fontWeight: 800, color: 'var(--navy-600, #1B2A4A)',
                 fontFamily: 'var(--font-display)',
               }}>
-                {data.identified_product}
+                {formatProductType(data.identified_product)}
               </div>
             </div>
           </div>

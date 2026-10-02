@@ -108,6 +108,24 @@ const ESTIMATES_DATABASE: Record<string, StandardEstimate> = {
     disclaimer: 'Approximate estimate only — confirm exact figures with BIS or your testing lab.',
     hasVerifiedData: true,
   },
+  'IS 1391 / Room AC Standards': {
+    code: 'IS 1391',
+    duration: '8 - 12 weeks (ISI Mark Scheme I)',
+    testingCost: '₹45,000 - ₹85,000 approx',
+    applicationFee: '₹1,000 application + ₹7,500 marking fee approx',
+    sourceNote: 'Source: BIS Product Certification Scheme-I Fee Schedule (2025/2026)',
+    disclaimer: 'Approximate estimate only — confirm exact figures with BIS or your testing lab.',
+    hasVerifiedData: true,
+  },
+  'IS 15410 / IS 17803': {
+    code: 'IS 15410 / IS 17803',
+    duration: '8 - 12 weeks (ISI Mark Scheme I)',
+    testingCost: '₹20,000 - ₹35,000 approx',
+    applicationFee: '₹1,000 application + ₹7,500 marking fee approx',
+    sourceNote: 'Source: BIS Product Certification Scheme-I Fee Schedule & Plastic Packaging Guidelines (2025/2026)',
+    disclaimer: 'Approximate estimate only — confirm exact figures with BIS or your testing lab.',
+    hasVerifiedData: true,
+  },
 };
 
 export function getEstimatesForStandard(codeOrQuery?: string): StandardEstimate {
@@ -135,7 +153,9 @@ export function getEstimatesForStandard(codeOrQuery?: string): StandardEstimate 
       (code.includes('9873') && queryClean.includes('9873')) ||
       (code.includes('10322') && queryClean.includes('10322')) ||
       (code.includes('14543') && queryClean.includes('14543')) ||
-      (code.includes('4151') && queryClean.includes('4151'))
+      (code.includes('4151') && queryClean.includes('4151')) ||
+      (code.includes('1391') && queryClean.includes('1391')) ||
+      (code.includes('15410') && (queryClean.includes('15410') || queryClean.includes('17803')))
     ) {
       return est;
     }

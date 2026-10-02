@@ -482,18 +482,50 @@ export default function ChatWindow({ initialPrompt }: ChatWindowProps) {
       setMessages(prev =>
         prev.map(m =>
           m.scanSessionId === sessionId
-            ? { ...m, isScanLoading: false, content: '📷 Scanned photo' }
+            ? { ...m, isScanLoading: false, content: scanType === 'label' ? '🏷️ Scanned packaging label photo' : '📷 Scanned photo' }
             : m
         )
       );
-      setMessages(prev => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: `I received your photo but ran into an issue identifying it. Please try scanning again with better lighting, or type your product description directly below 👇`,
-          structuredResponse: null,
-        },
-      ]);
+
+      if (scanType === 'label') {
+        const fallbackLabelResponse: StructuredBISResponse = {
+          responseType: 'label_analysis',
+          identified_product: 'Packaging Label Audit',
+          summary: 'Visual label compliance audit initiated. Check that the packaging photo clearly displays printed markings, IS codes, and registration numbers.',
+          label_checklist: [
+            { item: 'ISI / CRS Standard Mark', status: 'uncertain', detail: 'Visual verification pending. Check if ISI logo or CRS Standard Mark is clearly printed on packaging.' },
+            { item: 'BIS License / Registration Number', status: 'uncertain', detail: 'Visual verification pending. Verify CM/L-XXXXXXXXXX (ISI) or R-XXXXXXXX (CRS) registration number.' },
+            { item: 'IS Standard Code Marking', status: 'uncertain', detail: 'Visual verification pending. Confirm Indian Standard designation (e.g. IS 16102) is legible.' },
+            { item: 'Manufacturer / Importer Declaration', status: 'uncertain', detail: 'Visual verification pending. Check for manufacturer name, full address, and country of origin.' }
+          ],
+          applicable_standards: [],
+          certification_required: 'BIS Packaging & Label Verification',
+          testing_requirements: [],
+          action_checklist: [
+            { step: 1, action: 'Inspect physical packaging label directly for mandatory BIS Standard Mark, CML/R-number, and IS code.', detail: '' }
+          ],
+          sources: ['https://www.bis.gov.in'],
+          found_in_context: true,
+        };
+
+        setMessages(prev => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: fallbackLabelResponse.summary,
+            structuredResponse: fallbackLabelResponse,
+          },
+        ]);
+      } else {
+        setMessages(prev => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: `I received your photo but ran into an issue identifying it. Please try scanning again with better lighting, or type your product description directly below 👇`,
+            structuredResponse: null,
+          },
+        ]);
+      }
     } finally {
       setScanStatus('idle');
       setScanLoadingStep(0);
